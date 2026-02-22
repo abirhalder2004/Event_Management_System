@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Event Management System</h1>
+
+<a class="btn" href="/create">Create New Event</a>
+
+<div class="event-container">
+    {% for e in events %}
+    <div class="event-card">
+        <h2>{{ e.title }}</h2>
+        <p>{{ e.description }}</p>
+        <p><b>Date:</b> {{ e.event_date }}</p>
+        <a class="delete-btn" href="/delete/{{ e.id }}">Delete</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
